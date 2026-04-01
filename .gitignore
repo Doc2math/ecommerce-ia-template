@@ -22,3 +22,43 @@ Thumbs.db
 
 # IDE
 .vscode/settings.json
+Restaure le projet sur github:
+cd "C:\80- New Atelier"        // ou un autre dossier
+git clone https://github.com/Doc2math/ecommerce-ia-template.git 17-ecommerce
+cd 17-ecommerce
+cd my-ecome
+npm install
+copy .env.example .env
+Ouvre `.env` et remets ton mot de passe PostgreSQL :
+```
+DATABASE_URL=postgresql://postgres:TON_MOT_DE_PASSE@localhost:5432/ecommerce_db
+npx medusa db:migrate
+npm run dev
+
+cd ..\frontend
+npm install
+copy .env.local.example .env.local
+```
+Ouvre `.env.local` et remets ta clé API :
+```
+NEXT_PUBLIC_MEDUSA_URL=http://localhost:9000
+NEXT_PUBLIC_MEDUSA_PK=pk_...
+ Lancer les serveurs:
+ npm run dev
+
+Pour mettre à jour GitHub après avoir modifié des fichiers :
+bashcd "C:\80- New Atelier\17-ecommerce"
+git add .
+git commit -m "description de ce que tu as changé"
+git push
+
+Exemples de messages de commit clairs :
+bashgit commit -m "feat: ajout thème minimal"
+git commit -m "fix: correction bug panier"
+
+Vérifier ce qui a changé avant de committer :
+bash# Voir les fichiers modifiés
+git status
+
+# Voir les modifications en détail
+git diff
